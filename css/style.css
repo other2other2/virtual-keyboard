@@ -1,0 +1,29 @@
+.centralizer {
+  margin: 0 auto;
+  font-family: "Trebuchet MS", "Helvetica", sans-serif;
+}
+
+.title {
+  font-size: 30px;
+    color: rgba(101,134,177,0.8);
+    -webkit-text-stroke: 1px rgba(114,177,101,0.8);
+    -webkit-text-fill-color: rgba(101,134,177,0.8);
+}
+
+.title,
+.description,
+.language {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.body__textarea {
+  display: block;
+  width: 700px;
+  height: 200px;
+  margin: 10px auto 10px;
+  padding: 10px;
+  font-size: 18px;
+  color: #444444;
+}
+
