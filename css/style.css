@@ -27,3 +27,101 @@
   color: #444444;
 }
 
+.keyboard {
+  width: 704px;
+  padding: 5px;
+  padding-left: 0;
+  padding-bottom: 0;
+  background: #888888;
+  border: 3px solid #222222;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.row {
+  clear: both;
+  height: 40px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.key {
+  float: left;
+  height: 40px;
+  margin-left: 6px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  background: #444444;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-radius 0.3s, background-color 0.3s;
+  width: 40px;
+}
+
+.caseDown,
+.caseUp,
+.shiftCaps,
+.caps {
+  display: block;
+  width: 100;
+  min-height: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+.Backspace,
+.CapsLock,
+.ShiftLeft {
+  width: 100px;
+}
+
+.Enter,
+.ShiftRight {
+  width: 86px;
+}
+
+.Delete {
+  width: 44px;
+}
+
+.Tab {
+  width: 50px;
+}
+
+.Space {
+  width: 330px;
+}
+
+.AltLeft,
+.ArrowUp,
+.ArrowLeft,
+.ArrowDown,
+.ArrowRight,
+.Backspace,
+.CapsLock,
+.ControlLeft,
+.ControlRight,
+.Delete,
+.Enter,
+.ShiftLeft,
+.ShiftRight,
+.Tab,
+.AltRight,
+.MetaLeft {
+  font-weight: 600;
+  background-color: #222222;
+}
+
+.key:hover {
+  background: #79aa89
+}
+
+.key.active {
+  background-color: #2cfd72;
+  border-radius: 50px
+}

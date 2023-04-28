@@ -1,3 +1,6 @@
-import createHtml from './createHtml.js';
+import { createHtml, createKeyboard } from './createHtml.js';
 
-window.addEventListener('load', createHtml);
+window.addEventListener('load', () => {
+  createHtml();
+  createKeyboard();
+});
