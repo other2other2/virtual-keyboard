@@ -2,6 +2,7 @@ import { keyboardKeys, keyboardKeysCase } from './keyboardKeys.js';
 
 export function createHtml() {
   const body = document.querySelector('body');
+  body.innerHTML = '<audio src="./audio/keyboard-click-1.mp3" id="sound-1"></audio> <audio src="./audio/keyboard-click-2.mp3" id="sound-2"></audio> <audio src="./audio/keyboard-click-3.mp3" id="sound-3"></audio>';
 
   const centralizer = document.createElement('div');
   centralizer.className = 'centralizer';
@@ -38,6 +39,7 @@ export function createHtml() {
   languageBtn.classList = 'change-language';
   languageBtn.textContent = 'en/ru';
   centralizer.append(languageBtn);
+
 }
 
 export function createKeyboard() {
