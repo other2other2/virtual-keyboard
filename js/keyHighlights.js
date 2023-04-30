@@ -10,7 +10,7 @@ export default function keyHighlight() {
   document.addEventListener('keyup', (event) => {
     event.preventDefault();
     const keyUp = document.querySelector(`.${event.code}`);
-    if (!(keyUp === null)) {
+    if (!(keyUp === null) && event.code !== 'CapsLock') {
       keyUp.classList.remove('active');
     }
   });
