@@ -25,6 +25,7 @@
   padding: 10px;
   font-size: 18px;
   color: #444444;
+  outline: none;
 }
 
 .keyboard {
@@ -122,6 +123,11 @@
 }
 
 .key.active {
+  background-color: #2cfd72;
+  border-radius: 50px
+}
+
+.key:active {
   background-color: #2cfd72;
   border-radius: 50px
 }
