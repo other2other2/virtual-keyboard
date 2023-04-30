@@ -40,6 +40,13 @@ export function createHtml() {
   languageBtn.textContent = 'en/ru';
   centralizer.append(languageBtn);
 
+  const soundBtn = document.createElement('div');
+  soundBtn.classList = 'sound-off';
+  centralizer.append(soundBtn);
+
+  const soundImg = document.createElement('div');
+  soundImg.classList = 'sound-img';
+  soundBtn.append(soundImg);
 }
 
 export function createKeyboard() {

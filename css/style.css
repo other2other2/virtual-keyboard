@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .centralizer {
   margin: 0 auto;
   font-family: "Trebuchet MS", "Helvetica", sans-serif;
@@ -19,7 +23,7 @@
 
 .body__textarea {
   display: block;
-  width: 700px;
+  width: 715px;
   height: 200px;
   margin: 10px auto 10px;
   padding: 10px;
@@ -29,7 +33,7 @@
 }
 
 .keyboard {
-  width: 704px;
+  width: 715px;
   padding: 5px;
   padding-left: 0;
   padding-bottom: 0;
@@ -132,11 +136,10 @@
   border-radius: 50px
 }
 
-.change-language {
-  margin: 0 auto;
-  /* float: left; */
+.change-language,
+.sound-off  {
+  margin: 10px auto;
   height: 40px;
-  /* margin-left: 6px; */
   font-weight: 500;
   line-height: 40px;
   text-align: center;
@@ -149,11 +152,29 @@
   width: 50px;
 }
 
-.change-language:hover {
+.change-language:hover,
+.sound-off:hover {
   background: #79aa89
 }
 
-.change-language:active {
+.change-language:active,
+.sound-off:active {
   background-color: #2cfd72;
   border-radius: 50px
+}
+
+.sound-off {
+  padding: 5px;
+}
+
+.sound-img {
+  background-image: url('../img/volume.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.sound-img-muted {
+  background-image: url('../img/mute.svg');
 }
