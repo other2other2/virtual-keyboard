@@ -1,6 +1,6 @@
 import { keyboardKeys, keyboardKeysCase } from './keyboardKeys.js';
 
-export function createHtml() {
+export function createHtml(getLang) {
   const body = document.querySelector('body');
 
   const centralizer = document.createElement('div');
@@ -33,6 +33,11 @@ export function createHtml() {
   language.classList = 'language';
   language.textContent = 'Для переключения языка комбинация: левыe ctrl + alt';
   centralizer.append(language);
+
+  const languageBtn = document.createElement('div');
+  languageBtn.classList = 'change-language';
+  languageBtn.textContent = 'en/ru';
+  centralizer.append(languageBtn);
 }
 
 export function createKeyboard() {
