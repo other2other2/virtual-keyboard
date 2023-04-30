@@ -1,6 +1,6 @@
 import { keyboardKeys, keyboardKeysCase } from './keyboardKeys.js';
 
-export function createHtml(getLang) {
+export function createHtml() {
   const body = document.querySelector('body');
 
   const centralizer = document.createElement('div');
