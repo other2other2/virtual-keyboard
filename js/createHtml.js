@@ -10,15 +10,19 @@ export function createHtml() {
 
   const title = document.createElement('p');
   title.className = 'title';
-  title.textContent = 'RSS Виртуальная клавиатура';
+  title.textContent = 'Virtual Keyboard';
   centralizer.append(title);
+
+  const textAreaWrap = document.createElement('div');
+  textAreaWrap.className = 'textarea-wrap';
+  centralizer.append(textAreaWrap);
 
   const textArea = document.createElement('textarea');
   textArea.className = 'body__textarea textarea';
   textArea.setAttribute('id', 'my-textarea');
   textArea.setAttribute('cols', '50');
   textArea.setAttribute('rows', '5');
-  centralizer.append(textArea);
+  textAreaWrap.append(textArea);
 
   const keyboard = document.createElement('div');
   keyboard.classList = 'body__keyboard keyboard';
@@ -35,14 +39,18 @@ export function createHtml() {
   language.textContent = 'Для переключения языка комбинация: левыe ctrl + alt';
   centralizer.append(language);
 
+  const setting = document.createElement('div');
+  setting.classList = 'setting';
+  centralizer.append(setting);
+
   const languageBtn = document.createElement('div');
   languageBtn.classList = 'change-language';
   languageBtn.textContent = 'en/ru';
-  centralizer.append(languageBtn);
+  setting.append(languageBtn);
 
   const soundBtn = document.createElement('div');
   soundBtn.classList = 'sound-off';
-  centralizer.append(soundBtn);
+  setting.append(soundBtn);
 
   const soundImg = document.createElement('div');
   soundImg.classList = 'sound-img';
@@ -58,7 +66,6 @@ export function createKeyboard() {
   }
 
   function createKey(key) {
-    // create key wrapper
     const keyDiv = document.createElement('div');
     keyDiv.classList = `keyboard__key key ${key}`;
 
@@ -66,12 +73,10 @@ export function createKeyboard() {
       return keyDiv;
     }
 
-    // create inner span of key rus language
     const langRusSpan = document.createElement('span');
     langRusSpan.classList = 'rus hidden';
     keyDiv.append(langRusSpan);
 
-    // create inner spans of span rus language
     const langRusCaseDownSpan = document.createElement('span');
     langRusCaseDownSpan.classList = 'caseDown hidden';
     langRusCaseDownSpan.textContent = keyboardKeysCase[key].rus.caseDown;
@@ -92,12 +97,10 @@ export function createKeyboard() {
     langRusShiftCaps.textContent = keyboardKeysCase[key].rus.shiftCaps;
     langRusSpan.append(langRusShiftCaps);
 
-    // create inner span of key eng language
     const langEngSpan = document.createElement('span');
     langEngSpan.classList = 'eng';
     keyDiv.append(langEngSpan);
 
-    // create inner spans of span eng language
     const langEngCaseDownSpan = document.createElement('span');
     langEngCaseDownSpan.classList = 'caseDown';
     langEngCaseDownSpan.textContent = keyboardKeysCase[key].eng.caseDown;

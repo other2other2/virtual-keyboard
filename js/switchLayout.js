@@ -6,8 +6,6 @@ export default function switchLayout(lang, ...keys) {
   const engList = document.querySelectorAll('.eng');
   const languageBtn = document.querySelector('.change-language');
   const capsBtn = document.querySelector('.CapsLock');
-  // const shiftLeft = document.querySelector('.ShiftLeft');
-  // const shiftRight = document.querySelector('.ShiftRight');
   const shifts = [document.querySelector('.ShiftRight'), document.querySelector('.ShiftLeft')];
 
   function getActiveLanguage() {
@@ -106,24 +104,16 @@ export default function switchLayout(lang, ...keys) {
   document.addEventListener('keydown', (event) => {
     pressed.add(event.code);
     if (event.code === 'CapsLock') {
-      capsBtn.click();
+      if (state.get() !== 'caps') {
+        state.set('caps');
+        capsBtn.classList.add('active');
+        changeCase(getActiveLanguage());
+      } else {
+        state.set('caseDown');
+        capsBtn.classList.remove('active');
+        changeCase(getActiveLanguage());
+      }
     }
-
-    // console.log(event.code);
-    // console.log(state.get());
-    if (state.get() === 'caps' && event.code === 'ShiftLeft') {
-      state.set('shiftCaps');
-      // console.log('hi');
-      changeCase(getActiveLanguage());
-    } else if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
-      state.set('caseUp');
-      changeCase(getActiveLanguage());
-    }
-
-    // if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
-    //   state.set('caseUp');
-    //   changeCase(getActiveLanguage());
-    // }
 
     if (keys.every((key) => pressed.has(key))) {
       changeLanguage();
@@ -142,14 +132,5 @@ export default function switchLayout(lang, ...keys) {
       state.set('caseDown');
       changeCase(getActiveLanguage());
     }
-    // if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
-    //   if (state.get() === 'shiftCaps') {
-    //     state.set('caps');
-    //     changeCase(getActiveLanguage());
-    //   } else {
-    //     state.set('caseDown');
-    //     changeCase(getActiveLanguage());
-    //   }
-    // }
   });
 }
