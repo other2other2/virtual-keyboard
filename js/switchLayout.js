@@ -8,6 +8,8 @@ export default function switchLayout(lang, ...keys) {
   const capsBtn = document.querySelector('.CapsLock');
   const shifts = [document.querySelector('.ShiftRight'), document.querySelector('.ShiftLeft')];
 
+  localStorage.setItem('lang', lang);
+
   function getActiveLanguage() {
     return (localStorage.getItem('lang') === 'eng') ? engList : rusList;
   }
