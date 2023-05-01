@@ -10,15 +10,19 @@ export function createHtml() {
 
   const title = document.createElement('p');
   title.className = 'title';
-  title.textContent = 'RSS Виртуальная клавиатура';
+  title.textContent = 'Virtual Keyboard';
   centralizer.append(title);
+
+  const textAreaWrap = document.createElement('div');
+  textAreaWrap.className = 'textarea-wrap';
+  centralizer.append(textAreaWrap);
 
   const textArea = document.createElement('textarea');
   textArea.className = 'body__textarea textarea';
   textArea.setAttribute('id', 'my-textarea');
   textArea.setAttribute('cols', '50');
   textArea.setAttribute('rows', '5');
-  centralizer.append(textArea);
+  textAreaWrap.append(textArea);
 
   const keyboard = document.createElement('div');
   keyboard.classList = 'body__keyboard keyboard';
@@ -35,14 +39,18 @@ export function createHtml() {
   language.textContent = 'Для переключения языка комбинация: левыe ctrl + alt';
   centralizer.append(language);
 
+  const setting = document.createElement('div');
+  setting.classList = 'setting';
+  centralizer.append(setting);
+
   const languageBtn = document.createElement('div');
   languageBtn.classList = 'change-language';
   languageBtn.textContent = 'en/ru';
-  centralizer.append(languageBtn);
+  setting.append(languageBtn);
 
   const soundBtn = document.createElement('div');
   soundBtn.classList = 'sound-off';
-  centralizer.append(soundBtn);
+  setting.append(soundBtn);
 
   const soundImg = document.createElement('div');
   soundImg.classList = 'sound-img';
