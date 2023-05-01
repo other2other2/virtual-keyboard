@@ -117,6 +117,11 @@ export default function switchLayout(lang, ...keys) {
       }
     }
 
+    if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+      state.set('caseUp');
+      changeCase(getActiveLanguage());
+    }
+
     if (keys.every((key) => pressed.has(key))) {
       changeLanguage();
     }
