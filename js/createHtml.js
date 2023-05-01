@@ -66,7 +66,6 @@ export function createKeyboard() {
   }
 
   function createKey(key) {
-    // create key wrapper
     const keyDiv = document.createElement('div');
     keyDiv.classList = `keyboard__key key ${key}`;
 
@@ -74,12 +73,10 @@ export function createKeyboard() {
       return keyDiv;
     }
 
-    // create inner span of key rus language
     const langRusSpan = document.createElement('span');
     langRusSpan.classList = 'rus hidden';
     keyDiv.append(langRusSpan);
 
-    // create inner spans of span rus language
     const langRusCaseDownSpan = document.createElement('span');
     langRusCaseDownSpan.classList = 'caseDown hidden';
     langRusCaseDownSpan.textContent = keyboardKeysCase[key].rus.caseDown;
@@ -100,12 +97,10 @@ export function createKeyboard() {
     langRusShiftCaps.textContent = keyboardKeysCase[key].rus.shiftCaps;
     langRusSpan.append(langRusShiftCaps);
 
-    // create inner span of key eng language
     const langEngSpan = document.createElement('span');
     langEngSpan.classList = 'eng';
     keyDiv.append(langEngSpan);
 
-    // create inner spans of span eng language
     const langEngCaseDownSpan = document.createElement('span');
     langEngCaseDownSpan.classList = 'caseDown';
     langEngCaseDownSpan.textContent = keyboardKeysCase[key].eng.caseDown;
